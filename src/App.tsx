@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useCommentsStore } from "./store/CommentsContext";
+import { useCommentsStore } from "./store/useCommentStore";
 import type { CommentTypeWithImage } from "./models/Comment";
 import PostComents from "./components/postComents";
 
@@ -46,7 +46,7 @@ function App() {
         </div>
         <div className="">
           <h2 className="text-xl font-semibold mb-4 text-center">
-            Crear nuevo post
+            Crear nuevo comentario
           </h2>
           <PostComents />
         </div>

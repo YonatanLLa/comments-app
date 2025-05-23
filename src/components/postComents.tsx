@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useCommentsStore } from "../store/CommentsContext";
+import { useCommentsStore } from "../store/useCommentStore";
 
 function PostComents() {
   const { createPost } = useCommentsStore();
@@ -13,7 +13,7 @@ function PostComents() {
   });
 
   const validateTitle = (value: string) => {
-    if (!value.trim()) return "El título es obligatorio";
+    if (!value.trim()) return "El nombre del usuario es obligatorio";
     return "";
   };
 
@@ -24,8 +24,8 @@ function PostComents() {
 
   const validateEmail = (value: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!value.trim()) return "El email es obligatorio";
-    if (!emailRegex.test(value)) return "Email inválido";
+    if (!value.trim()) return "El correo electronico es obligatorio";
+    if (!emailRegex.test(value)) return "Correo electronico inválido";
     return "";
   };
 
@@ -71,10 +71,8 @@ function PostComents() {
       onSubmit={handleSubmit}
       className="max-w-md mx-auto p-4 border rounded-md shadow-md bg-[#404040] border-[#545454] hover:border-[#404040] transition duration-300 ease-in-out"
     >
-      <h2 className="text-xl font-semibold mb-4">Crear nuevo post</h2>
-
       <label className="block mb-4">
-        Título:
+        Nombre del autor:
         <input
           type="text"
           value={title}
@@ -86,7 +84,7 @@ function PostComents() {
       </label>
 
       <label className="block mb-4">
-        Email:
+        Correo electrónico:
         <input
           type="email"
           value={email}
@@ -113,7 +111,7 @@ function PostComents() {
         type="submit"
         className="bg-[#4f4f4f] border-[#5e5d5d] hover:bg-[#676767] transition duration-300 ease-in-out p-4 rounded-md text-white font-semibold w-full cursor-pointer"
       >
-        Crear Post
+        Crear Comentario
       </button>
     </form>
   );
