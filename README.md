@@ -24,6 +24,6 @@ Una aplicación creada con React que obtiene una lista de comentarios desde una 
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/comments-app.git
+   git clone https://github.com/YonatanLLa/comments-app.git
    cd comments-app
    ```
